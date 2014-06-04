@@ -41,7 +41,7 @@ public class FlyObject
     double k4 = T*fx(transform.position.x + q3);
     double q4 = T*(velocity.x + k3);
     
-    velocity.x += (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+    velocity.x += Time.deltaTime*(k1 + 2 * k2 + 2 * k3 + k4) / 6;
   }
   
   void CalcY () {
@@ -57,11 +57,11 @@ public class FlyObject
     double k4 = T*fy(transform.position.y + q3);
     double q4 = T*(velocity.y + k3);
     
-    velocity.y += (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+    velocity.y += Time.deltaTime*(k1 + 2 * k2 + 2 * k3 + k4) / 6;
   }
   
   void FixedUpdate () {
     calcX();
     calcY();
-    transform.translate(velocity.x, velocity.y, 0);
+    transform.translate(Time.deltaTime*velocity.x, Time.deltaTime*velocity.y, 0);
   }
