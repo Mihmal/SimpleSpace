@@ -2,7 +2,7 @@ public class FlyObject
 {
   public double T = 0.01
   public string name
-  public double mass
+  public double mass//Две "s" по-приколу написал
   public Vector2 velocity
   public GameObject[] others
   
